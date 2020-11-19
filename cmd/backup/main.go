@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"backup/pkg/config"
+	"backup/pkg/storage"
 
 	"github.com/joho/godotenv"
 	"github.com/urfave/cli/v2"
@@ -44,6 +45,13 @@ func main() {
 
 func run(cfg *config.Config) cli.ActionFunc {
 	return func(ctx *cli.Context) error {
+		if err := storage.NewEngine(*cfg); err != nil {
+			return err
+    }
+
+    // check bucket exist
+    storage.S3.
+
 		return nil
 	}
 }

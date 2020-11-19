@@ -59,7 +59,7 @@ func NewEngine(config config.Config) (err error) {
 		)
 	}
 
-	return S3.CreateBucket(config.Storage.Bucket, config.Storage.Region)
+	return nil
 }
 
 // NewS3Engine return storage interface
